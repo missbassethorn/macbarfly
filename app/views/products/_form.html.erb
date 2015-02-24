@@ -1,0 +1,22 @@
+<%= link_to 'back to product list', products_path %>
+<hr/>
+
+<div style='width: 30%;'>
+	<%= form_for(@product)do |f| %>
+		<div class ='form-group'>
+			<%= f.label :description, "Description" %>
+			<%= f.text_field :description, autofocus: true, size: 30, maxlength: 50, class: 'form-control' %>
+		</div>
+
+		<div class ='form-group'>
+			<%= f.label :cost, "Cost ($)" %>
+			<%= f.text_field :cost, size: 6, maxlength: 50, class: 'form-control' %> 
+		</div>
+
+		<% flash.alert.each do |msg| %>
+			<%= content_tag :div, msg, class: 'small' %><br/>
+		<% end if flash.alert%> 
+			
+		<%= f.submit "Save", class: "btn btn-success" %>
+	<% end %>
+</div>

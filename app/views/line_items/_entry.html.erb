@@ -1,0 +1,17 @@
+<%= form_for(@line_item, html: {class: 'form-inline'}) do |f| %>
+	<div class ='form-group'>
+		<%= f.label(:person_id, "Who?") %>
+		<%= f.collection_select(:person_id, Person.order_by_last_name, :id, :full_name, {}, {class: 'form-control'} )%>
+		</div>
+
+	<div class ='form-group'>
+		<%= f.label(:product_id, "What?") %>
+		<%= f.collection_select(:product_id, Product.order_by_description, :id, :description, {}, {class: 'form-control'}) %>
+	</div>
+	
+	<div class ='form-group'>
+		<%= f.label(:quantity, "How many?") %>
+		<%= f.select(:quantity, (1..10).to_a, {}, {class: 'form-control'}) %>
+		<%= f.submit "Save", class: 'btn btn-primary'%>
+	</div>
+<% end %>

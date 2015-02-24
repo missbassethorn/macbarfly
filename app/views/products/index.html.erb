@@ -1,0 +1,24 @@
+<h1>Stuff we sell</h1>
+
+<%= link_to 'Home', root_path%> | <%= link_to 'Band members', people_path %>
+<hr/>
+
+<p>
+	<%= link_to 'Add new', new_product_path %>
+</p>
+	
+<% @list.each do |product| %>
+	<ul>
+		<li>
+			<%= product.description %> (<%= number_to_currency(product.cost) %>)
+
+			<%= link_to edit_product_path(product) do %>
+				<span class="glyphicon glyphicon-pencil"></span>
+			<% end %>
+
+			<%= link_to product_path(product), method: :delete, data: { confirm: 'Are you sure?' } do  %>
+				<span class="glyphicon glyphicon-remove"></span>
+			<% end %>
+		</li>
+	</ul>
+<% end %>

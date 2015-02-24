@@ -1,0 +1,24 @@
+<div style='width: 60%;'>
+	<table class='table table-striped table-hover table-condensed'>
+		<thead>
+			<tr>
+				<th>Who?</th>
+				<th>What?</th>
+				<th class='text-right'>How much?</th>
+				<th class='text-right'>How many?</th>
+				<th class='text-right'>How much really?</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @line_items.each do |item| %>
+				<tr>
+					<td><%= item.person.full_name %></td>
+					<td><%= item.product.description %></td>
+					<td class='text-right'><%= number_to_currency(item.cost) %></td>
+					<td class='text-right'><%= item.quantity %></td>
+					<td class='text-right'><%= number_to_currency(item.cost * item.quantity) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
