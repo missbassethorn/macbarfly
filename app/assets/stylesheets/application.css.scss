@@ -13,3 +13,31 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body { background-color: #fff; }
+
+#wrapper {
+	width:800px;
+	margin: 0 auto;
+}
+
+h1 { text-align:center; }
+
+.navbar {
+	margin:0 auto;
+	display:table;
+}
+
+.nav-pills li {
+	display:inline;
+	margin:0 auto;
+}
+
+.form-inline {
+	margin:0 auto;
+	display:table;
+}
+
+.form-group {
+	padding: 10px;
+}

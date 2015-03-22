@@ -1,7 +1,18 @@
-<h1>Barfly</h1>
+<h1>Barfly!</h1>
 
-<%= link_to 'Band members', people_path %> | <%= link_to 'Stuff we sell', products_path %>
-<hr/>
-<%= render 'entry' %>
-<hr/>
-<%= render 'list' %>
+<div id="wrapper">
+
+	<nav class="navbar">
+		<ul class="nav nav-pills">
+			<li role="presentation"><%= link_to 'Home', root_path %></li>
+			<li role="presentation"><%= link_to 'Band members', people_path %></li>
+			<li role="presentation"><%= link_to 'Stuff we sell', products_path %></li>
+		</ul>
+	</nav>
+	<hr/>
+
+	<%= render 'entry' %>
+	<hr/>
+	<%= render 'list' %>
+
+</div>
