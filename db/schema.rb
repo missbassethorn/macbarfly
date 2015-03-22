@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223214357) do
+ActiveRecord::Schema.define(version: 20150322225352) do
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "people_id"
@@ -34,17 +34,14 @@ ActiveRecord::Schema.define(version: 20150223214357) do
   add_index "line_items", ["products_id"], name: "index_line_items_on_products_id"
 
   create_table "payments", force: :cascade do |t|
-    t.integer  "people_id"
+    t.integer  "person_id"
     t.decimal  "amount"
-    t.date     "false"
     t.date     "paid_on"
-    t.datetime "deleted_at"
-    t.datetime "true"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "payments", ["people_id"], name: "index_payments_on_people_id"
+  add_index "payments", ["person_id"], name: "index_payments_on_person_id"
 
   create_table "people", force: :cascade do |t|
     t.string   "first_name",   null: false

@@ -10,15 +10,15 @@
 
 		<div class ='form-group'>
 			<%= f.label :cost, "Cost ($)" %>
-			<%= f.text_field :cost, size: 6, maxlength: 50, class: 'form-control text-right' %>
+			<%= f.text_field :cost, size: 6, maxlength: 10, class: 'form-control text-right' %>
 		</div>
 
 		<% flash.alert.each do |msg| %>
 			<%= content_tag :div, msg, class: 'small' %><br/>
 		<% end if flash.alert%>
 
-		<%= f.submit "Save", class: "btn btn-info" %>
-		<%= f.submit "Reset", type: "reset", class: "btn btn-info" %>
-		<%= link_to "Cancel", products_path, class: "btn btn-info" %>
+		<%= f.submit 	"Save", class: "btn btn-info" %>
+		<%= f.submit 	"Reset", type: "reset", class: "btn btn-info" %>
+		<%= link_to 	"Cancel", products_path, class: "btn btn-info" %>
 	<% end %>
 </div>

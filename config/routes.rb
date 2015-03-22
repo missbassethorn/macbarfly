@@ -5,8 +5,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products
-  resources :line_items
+  resources :payments, except: :show
+  resources :products, except: :show
+  resources :line_items, except: :show
 
   root 'line_items#index'
   # The priority is based upon order of creation: first created -> highest priority.
