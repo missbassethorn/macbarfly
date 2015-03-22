@@ -17,8 +17,10 @@
 			<ul>
 				<li><%= content_tag :div, msg, class: 'small' %></li>
 			</ul>
-		<% end if flash.alert%> 
-		
-		<%= f.submit "Save", class: "btn btn-success" %>
+		<% end if flash.alert%>
+
+		<%= f.submit "Save", class: "btn btn-info" %>
+		<%= f.submit "Reset", type: "reset", class: "btn btn-info" %>
+		<%= link_to "Cancel", people_path, class: "btn btn-info" %>
 	</div>
 <% end %>

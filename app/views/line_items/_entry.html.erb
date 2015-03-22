@@ -8,10 +8,17 @@
 		<%= f.label(:product_id, "What?") %>
 		<%= f.collection_select(:product_id, Product.order_by_description, :id, :description, {}, {class: 'form-control'}) %>
 	</div>
-	
+
 	<div class ='form-group'>
 		<%= f.label(:quantity, "How many?") %>
 		<%= f.select(:quantity, (1..10).to_a, {}, {class: 'form-control'}) %>
+	</div>
+
+	<div class ='form-group'>
+		<%= f.label(:purchase_on, "When?") %>
+	</div>
+
+	<div class = 'form-group'>
 		<%= f.submit "Save", class: 'btn btn-primary'%>
 	</div>
 <% end %>

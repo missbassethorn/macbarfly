@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :people
+  resources :people do
+    member do
+      post :reinstate
+    end
+  end
+  
   resources :products
   resources :line_items
 

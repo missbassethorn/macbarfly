@@ -4,7 +4,7 @@
 <hr/>
 
 <p>
-	<%= link_to 'Add new', new_person_path %> | 
+	<%= link_to 'Add new', new_person_path %> |
 	<% if @show_deleted %>
 		<%= link_to 'Show current members', people_path %>
 	<% else %>
@@ -19,7 +19,11 @@
 				<tr>
 					<td><%= person.display_name %></td>
 
-					<% unless @show_deleted %>
+					<% if @show_deleted %>
+						<td>
+							<%= button_to "Reinstate", reinstate_person_path(person), class: "btn btn-info", data: { confirm: "Are you sure you want to reinstate #{person.full_name}?" } %>
+						</td>
+					<% else %>
 						<td>
 							<%= link_to edit_person_path(person) do %>
 								<span class="glyphicon glyphicon-pencil"></span>
@@ -27,7 +31,7 @@
 						</td>
 
 						<td>
-							<%= link_to person_path(person), method: :delete, data: { confirm: 'Are you sure?' } do  %>
+							<%= link_to person_path(person), method: :delete, data: { confirm: "Are you sure you want to retire #{person.full_name}?" } do  %>
 								<span class="glyphicon glyphicon-remove"></span>
 							<% end %>
 						</td>

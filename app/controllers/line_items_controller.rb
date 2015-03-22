@@ -16,4 +16,14 @@ class LineItemsController < ApplicationController
 		redirect_to line_items_path
   end
 
+  def destroy
+    @line_item = LineItem.find(params[:id])
+
+    if @line_item.destroy
+      redirect_to line_items_path
+    else
+      redirect_to line_items_path, alert: @line_item.errors.full_messages
+    end
+  end
+
 end

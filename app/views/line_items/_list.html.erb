@@ -12,11 +12,22 @@
 		<tbody>
 			<% @line_items.each do |item| %>
 				<tr>
-					<td><%= item.person.full_name %></td>
-					<td><%= item.product.description %></td>
-					<td class='text-right'><%= number_to_currency(item.cost) %></td>
-					<td class='text-right'><%= item.quantity %></td>
-					<td class='text-right'><%= number_to_currency(item.cost * item.quantity) %></td>
+					<td id="full-name"><%= item.person.full_name %></td>
+					<td id="description"><%= item.product.description %></td>
+					<td class='text-right' id="cost"><%= number_to_currency(item.cost) %></td>
+					<td class='text-right' id="quantity"><%= item.quantity %></td>
+					<td class='text-right' id="total"><%= number_to_currency(item.cost * item.quantity) %></td>
+					<td>
+						<%= link_to edit_line_item_path(item) do %>
+							<span class="glyphicon glyphicon-pencil"></span>
+						<% end %>
+					</td>
+
+					<td>
+						<%= link_to line_item_path(item), method: :delete, data: { confirm: "Are you sure you want to delete this entry?" } do  %>
+							<span class="glyphicon glyphicon-remove"></span>
+						<% end %>
+					</td>
 				</tr>
 			<% end %>
 		</tbody>

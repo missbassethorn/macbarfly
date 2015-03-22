@@ -40,9 +40,19 @@ class PeopleController < ApplicationController
 		else
 			redirect_to people_path, alert: @person.errors.full_messages
 		end
-	end 
+	end
 
-	private 
+	def reinstate
+		@person = Person.destroyed.find(params[:id])
+
+		if @person.restore
+			redirect_to people_path
+		else
+			redirect_to people_path, alert: @person.errors.full_messages
+		end
+	end
+
+	private
 
 	def person_params
 		params.require(:person).permit(:first_name, :last_name)
