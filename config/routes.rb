@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       post :reinstate
     end
   end
-  
+
   resources :products
   resources :line_items
 

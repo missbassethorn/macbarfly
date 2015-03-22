@@ -21,17 +21,19 @@
 
 					<% if @show_deleted %>
 						<td>
-							<%= button_to "Reinstate", reinstate_person_path(person), class: "btn btn-info", data: { confirm: "Are you sure you want to reinstate #{person.full_name}?" } %>
+							<%= link_to reinstate_person_path(person), method: :post, title: "Reinstate", data: { confirm: "Are you sure you want to reinstate #{person.full_name}?" } do %>
+								<span class="glyphicon glyphicon-flash"></span>
+							<% end %>
 						</td>
 					<% else %>
 						<td>
-							<%= link_to edit_person_path(person) do %>
+							<%= link_to edit_person_path(person), title: "Edit" do %>
 								<span class="glyphicon glyphicon-pencil"></span>
 							<% end %>
 						</td>
 
 						<td>
-							<%= link_to person_path(person), method: :delete, data: { confirm: "Are you sure you want to retire #{person.full_name}?" } do  %>
+							<%= link_to person_path(person), title: "Delete", method: :delete, data: { confirm: "Are you sure you want to retire #{person.full_name}?" } do  %>
 								<span class="glyphicon glyphicon-remove"></span>
 							<% end %>
 						</td>

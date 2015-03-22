@@ -25,5 +25,4 @@ class LineItemsController < ApplicationController
       redirect_to line_items_path, alert: @line_item.errors.full_messages
     end
   end
-
 end
