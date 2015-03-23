@@ -1,0 +1,15 @@
+<%= form_for(@payment, html: {class: 'form-inline'}) do |f| %>
+	<div class ='form-group'>
+		<%= f.label(:person_id, "Who?") %>
+		<%= f.collection_select(:person_id, Person.order_by_last_name, :id, :full_name, {}, {class: 'form-control'} )%>
+		</div>
+
+	<div class ='form-group'>
+		<%= f.label(:amount, "How much?") %>
+		<%= f.text_field(:amount, class: 'form-control') %>
+	</div>
+
+	<div class = 'form-group'>
+		<%= f.submit "Save", class: 'btn btn-primary'%>
+	</div>
+<% end %>

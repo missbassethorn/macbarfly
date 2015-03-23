@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'payments/index'
+
+  get 'payments/update'
+
+  get 'payments/create'
+
+  get 'payments/destroy'
+
+  get 'products/index'
+
+  get 'products/update'
+
+  get 'products/create'
+
+  get 'products/destroy'
+
   resources :people do
     member do
       post :reinstate
