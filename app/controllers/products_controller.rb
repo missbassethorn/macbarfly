@@ -12,7 +12,6 @@ def index
 	end
 
 	def update
-		byebug
 		@product = Product.find(params[:id])
 
 		if @product.update(product_params)

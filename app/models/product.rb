@@ -8,5 +8,4 @@ class Product < ActiveRecord::Base
 	validates_numericality_of :cost
 
 	scope :order_by_description, -> { order(:description) }
-
 end
