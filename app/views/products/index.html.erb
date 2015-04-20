@@ -1,42 +1,27 @@
-<h1>Stuff we sell</h1>
+<p>
+	<%= link_to 'Add new', new_product_path %>
+</p>
 
-<div id="wrapper">
-	<nav class="navbar">
-		<ul class="nav nav-pills">
-			<li role="presentation"><%= link_to 'Home', root_path %></li>
-			<li role="presentation"><%= link_to 'Band members', people_path %></li>
-			<li role="presentation"><%= link_to 'Stuff we sell', products_path %></li>
-			<li role="presentation"><%= link_to 'Payments', payments_path %></li>
-		</ul>
-	</nav>
-	<hr/>
+<table class='table table-striped table-hover table-condensed'>
+	<tbody>
+		<% @list.each do |product| %>
+			<tr>
+				<td>
+					<%= product.description %> (<%= number_to_currency(product.cost) %>)
+				</td>
 
-	<p>
-		<%= link_to 'Add new', new_product_path %>
-	</p>
+				<td>
+				<%= link_to edit_product_path(product), title: "Edit" do %>
+					<span class="glyphicon glyphicon-pencil"></span>
+				<% end %>
+				</td>
 
-
-	<table class='table table-striped table-hover table-condensed'>
-		<tbody>
-			<% @list.each do |product| %>
-				<tr>
-					<td>
-						<%= product.description %> (<%= number_to_currency(product.cost) %>)
-					</td>
-
-					<td>
-					<%= link_to edit_product_path(product), title: "Edit" do %>
-						<span class="glyphicon glyphicon-pencil"></span>
+				<td>
+					<%= link_to product_path(product), title: "Delete", method: :delete, data: { confirm: 'Are you sure?' } do  %>
+						<span class="glyphicon glyphicon-remove"></span>
 					<% end %>
-					</td>
-
-					<td>
-						<%= link_to product_path(product), title: "Delete", method: :delete, data: { confirm: 'Are you sure?' } do  %>
-							<span class="glyphicon glyphicon-remove"></span>
-						<% end %>
-					</td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
-</div>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

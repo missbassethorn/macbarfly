@@ -1,1 +1,13 @@
-<h1>Barfly!</h1>
+<header>
+  <h1>MacBarfly</h1>
+
+  <nav class="navbar">
+    <ul class="nav nav-pills">
+      <li role="presentation"><%= link_to 'Purchases', root_path %></li>
+      <li role="presentation"><%= link_to 'Payments', payments_path %></li>
+      <li role="presentation"><%= link_to 'Email Bills', balance_email_person_path(Person.first), method: :get %></li>
+      <li role="presentation"><%= link_to 'Band Members', people_path %></li>
+      <li role="presentation"><%= link_to 'Product List', products_path %></li>
+    </ul>
+  </nav>
+</header>

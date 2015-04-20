@@ -1,18 +1,3 @@
-<h1>Barfly!</h1>
-
 <%= render 'entry' %>
 <hr/>
-
-<div style='width: 40%'>
-  <table class='table table-striped table-hover table-condensed'>
-    <tbody>
-      <% @list.each do |payment| %>
-        <tr>
-          <td><%= payment.paid_on %></td>
-          <td><%= payment.person.full_name %></td>
-          <td><%= payment.amount %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<%= render 'list' %>

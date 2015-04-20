@@ -15,4 +15,16 @@ class Person < ActiveRecord::Base
   def display_name
   	"#{ last_name }, #{ first_name }"
   end
+
+  def total_purchase_amount
+    line_items.any? ? line_items.to_a.sum(&:total_cost) : 0#can I do this better? - it's a derived field
+  end
+
+  def total_payment_amount
+    payments.any? ? payments.map(&:amount).sum : 0
+  end
+
+  def balance
+    total_purchase_amount - total_payment_amount
+  end
 end

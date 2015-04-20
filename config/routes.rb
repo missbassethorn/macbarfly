@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :people do
     member do
       post :reinstate
+      get  :balance_email
     end
   end
 

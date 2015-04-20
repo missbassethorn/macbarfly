@@ -4,4 +4,7 @@ class LineItem < ActiveRecord::Base
 
 	validates :product, :person, presence: true
 
+  def total_cost
+    quantity * cost
+  end
 end
