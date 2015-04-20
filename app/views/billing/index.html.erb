@@ -1,0 +1,8 @@
+<div>
+  View outstanding balances of
+  <%= select_tag 'outstanding_balance', (options_for_select (0..100).step(10).map{|i| number_to_currency(i) }, number_to_currency(30)), class: 'money' %>
+  or over
+  <%= button_tag 'Go'%>
+<div>
+<!-- add list of balances over x amount -->
+<!-- ajax to select diff amounts -->

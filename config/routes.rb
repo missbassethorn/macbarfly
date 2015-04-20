@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :payments, except: :show
   resources :products, except: :show
   resources :line_items, except: :show
+  resources :billing, only: :index
 
   root 'line_items#index'
   # The priority is based upon order of creation: first created -> highest priority.

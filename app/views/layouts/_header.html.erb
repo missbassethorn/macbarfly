@@ -5,7 +5,7 @@
     <ul class="nav nav-pills">
       <li role="presentation"><%= link_to 'Purchases', root_path %></li>
       <li role="presentation"><%= link_to 'Payments', payments_path %></li>
-      <li role="presentation"><%= link_to 'Email Bills', balance_email_person_path(Person.first), method: :get %></li>
+      <li role="presentation"><%= link_to 'Email Bills', billing_index_path %></li>
       <li role="presentation"><%= link_to 'Band Members', people_path %></li>
       <li role="presentation"><%= link_to 'Product List', products_path %></li>
     </ul>
