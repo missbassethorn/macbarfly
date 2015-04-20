@@ -1,6 +1,6 @@
 <div>
   View outstanding balances of
-  <%= select_tag 'outstanding_balance', (options_for_select (0..100).step(10).map{|i| number_to_currency(i) }, number_to_currency(30)), class: 'money' %>
+  <%= select_tag 'outstanding_balance', (options_for_select  }, number_to_currency(30)), class: 'money' %>
   or over
   <%= button_tag 'Go'%>
 <div>
