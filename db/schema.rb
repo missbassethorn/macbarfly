@@ -11,27 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322225352) do
+ActiveRecord::Schema.define(version: 20150522074936) do
 
   create_table "line_items", force: :cascade do |t|
-    t.integer  "people_id"
-    t.integer  "products_id"
+    t.integer  "person_id"
+    t.integer  "product_id"
     t.datetime "purchased_on"
-    t.decimal  "false"
     t.integer  "quantity"
     t.decimal  "cost"
     t.datetime "deleted_at"
-    t.datetime "true"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "person_id"
-    t.integer  "product_id"
   end
 
-  add_index "line_items", ["people_id"], name: "index_line_items_on_people_id"
   add_index "line_items", ["person_id"], name: "index_line_items_on_person_id"
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
-  add_index "line_items", ["products_id"], name: "index_line_items_on_products_id"
 
   create_table "payments", force: :cascade do |t|
     t.integer  "person_id"
@@ -49,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150322225352) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.datetime "destroyed_at"
+    t.integer  "migration_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -57,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150322225352) do
     t.datetime "destroyed_at"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "migration_id"
   end
 
 end

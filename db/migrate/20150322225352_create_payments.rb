@@ -1,6 +1,5 @@
 class CreatePayments < ActiveRecord::Migration
   def change
-    drop_table :payments
     create_table :payments do |t|
       t.belongs_to :person, index: true
       t.decimal :amount

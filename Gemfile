@@ -30,6 +30,9 @@ gem 'destroyed_at'
 
 gem 'bootstrap-datepicker-rails'
 
+gem 'activerecord-reset-pk-sequence'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -7,6 +7,9 @@
 		<% @list.each do |product| %>
 			<tr>
 				<td>
+					<%= product.id %>
+				</td>
+				<td>
 					<%= product.description %> (<%= number_to_currency(product.cost) %>)
 				</td>
 
