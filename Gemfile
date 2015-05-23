@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.3'
 
 #DestroyedAt
-gem 'destroyed_at'
+# gem 'destroyed_at'
 
 gem 'bootstrap-datepicker-rails'
 

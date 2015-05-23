@@ -55,7 +55,6 @@ namespace :import do
 
   def init_model(klass)
     klass.send :delete_all
-    klass.destroyed :delete_all if klass.respond_to? :destroyed
     klass.send :reset_pk_sequence
   end
 end

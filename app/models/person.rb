@@ -1,12 +1,12 @@
 class Person < ActiveRecord::Base
-	include DestroyedAt
-
 	has_many :line_items
   has_many :payments
 
 	validates :first_name, :last_name, presence: true, length: {minimum: 1, maximum: 50}
 
   scope :order_by_last_name, -> { order(:last_name) }
+  scope :retired, -> { where.not(:destroyed_at => nil) }
+  scope :active, -> { where(:destroyed_at => nil) }
 
   def full_name
     "#{ first_name } #{ last_name } "
@@ -26,5 +26,13 @@ class Person < ActiveRecord::Base
 
   def balance
     total_purchase_amount - total_payment_amount
+  end
+
+  def retired?
+    :destroyed_at.present?
+  end
+
+  def active?
+    :destroyed_at.nil?
   end
 end

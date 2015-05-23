@@ -1,5 +1,4 @@
 class Product < ActiveRecord::Base
-	include DestroyedAt
 
 	has_many :line_items
 
