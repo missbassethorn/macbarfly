@@ -1,7 +1,7 @@
 <%= form_for(@line_item, html: {class: 'form-inline'}) do |f| %>
 	<div class ='form-group'>
 		<%= f.label(:person_id, "Who?") %>
-		<%= f.collection_select(:person_id, Person.order_by_last_name, :id, :full_name, {}, {class: 'form-control'} )%>
+		<%= f.collection_select(:person_id, Person.active.by_first_name, :id, :full_name, {}, {class: 'form-control'} )%>
 		</div>
 
 	<div class ='form-group'>

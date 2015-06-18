@@ -32,6 +32,7 @@ gem 'bootstrap-datepicker-rails'
 
 gem 'activerecord-reset-pk-sequence'
 
+gem 'kaminari'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

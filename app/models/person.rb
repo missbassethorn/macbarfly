@@ -3,8 +3,10 @@ class Person < ActiveRecord::Base
   has_many :payments
 
 	validates :first_name, :last_name, presence: true, length: {minimum: 1, maximum: 50}
+  validates :email, :email_format => { :message => 'is not looking good' }
 
-  scope :order_by_last_name, -> { order(:last_name) }
+  scope :by_last_name, -> { order(:last_name) }
+  scope :by_first_name, -> { order(:first_name) }
   scope :retired, -> { where.not(:destroyed_at => nil) }
   scope :active, -> { where(:destroyed_at => nil) }
 

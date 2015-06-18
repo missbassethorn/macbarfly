@@ -17,7 +17,7 @@
 body { background-color: #fff; }
 
 .wrapper {
-	width: 800px;
+	width: 850px;
 	margin: 0 auto;
 }
 
@@ -34,7 +34,7 @@ h1 { text-align:center; }
 }
 
 .nav-pills li a:hover {
-	background-color:#8A6ACC;
+	background-color:#5D8AA8;
 	color:#fff;
 }
 
@@ -49,7 +49,7 @@ h1 { text-align:center; }
 }
 
 .btn {
-	background-color:#8A6ACC;
+	background-color:#5D8AA8;
 	border:none;
 }
 
@@ -58,7 +58,7 @@ h1 { text-align:center; }
 }
 
 a {
-	color:#8A6ACC;
+	color:#5D8AA8;
 }
 
 a:hover {
@@ -68,3 +68,8 @@ a:hover {
 .money {
 	text-align: right;
 }
+
+.pagination
+ {
+ 	text-align: right;
+ }

@@ -4,6 +4,8 @@ class LineItem < ActiveRecord::Base
 
 	validates :product, :person, presence: true
 
+  default_scope -> { order(:updated_at => :desc) }
+
   def total_cost
     quantity * cost
   end
