@@ -3,14 +3,19 @@
 
 <%= form_for @person do |f| %>
 	<div style='width: 40%;'>
-		<div class ='form-group'>
+		<div class='form-group'>
 			<%= f.label(:first_name, "First name") %>
 			<%= f.text_field :first_name, autofocus: true, class: 'form-control', size: 50, maxlength: 50 %>
-		<div/>
+		</div>
 
-		<div class ='form-group'>
+		<div class='form-group'>
 			<%= f.label(:last_name, "Last name") %>
-			<%= f.text_field :last_name, size: 50, class: 'form-control', maxlength: 50%>
+			<%= f.text_field :last_name, size: 50, class: 'form-control', maxlength: 50 %>
+		</div>
+
+		<div class='form-group'>
+			<%= f.label(:email, "Email") %>
+			<%= f.text_field :email, size: 50, class: 'form-control', maxlength: 100 %>
 		</div>
 
 		<% flash.alert.each do |msg| %>

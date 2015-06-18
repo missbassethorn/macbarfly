@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
 	def index
 		@show_deleted = params[:show_deleted]
-		@list = @show_deleted ? Person.retired.order_by_last_name : Person.active.order_by_last_name
+		@list = @show_deleted ? Person.retired.by_last_name : Person.active.by_last_name
 	end
 
 	def new
@@ -63,6 +63,6 @@ class PeopleController < ApplicationController
 	private
 
 	def person_params
-		params.require(:person).permit(:first_name, :last_name)
+		params.require(:person).permit(:first_name, :last_name, :email)
 	end
 end

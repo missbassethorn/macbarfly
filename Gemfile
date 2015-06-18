@@ -34,6 +34,7 @@ gem 'activerecord-reset-pk-sequence'
 
 gem 'kaminari'
 
+gem 'validates_email_format_of'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
