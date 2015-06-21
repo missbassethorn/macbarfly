@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   def index
   	@line_item = LineItem.new
-  	@line_items = LineItem.page(params[:page]).per(50)
+  	@line_items = LineItem.page(params[:page])
   end
 
   def create

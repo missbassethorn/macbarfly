@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @list.each do |payment| %>
+    <% @payments.each do |payment| %>
       <tr>
         <td><%= payment.paid_on.strftime('%d-%b-%Y') %></td>
         <td><%= payment.person.full_name %></td>
@@ -16,3 +16,4 @@
     <% end %>
   </tbody>
 </table>
+<div class="money"><%= paginate @payments %></div>

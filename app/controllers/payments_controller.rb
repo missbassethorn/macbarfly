@@ -1,27 +1,21 @@
 class PaymentsController < ApplicationController
   def index
     @payment = Payment.new
-    @list = Payment.all
+    @payments = Payment.page(params[:page])
   end
 
   def create
     @params = params[:payment]
 
-    input_params = { person_id: @params[:person_id], amount: @params[:amount], paid_on: DateTime.now }
-
-    @pyament = Payment.new(input_params)
+    @pyament = Payment.new(payment_params)
     @pyament.save
 
     redirect_to payments_path
   end
 
-  # def destroy
-  #   @line_item = LineItem.find(params[:id])
+  private
 
-  #   if @line_item.destroy
-  #     redirect_to line_items_path
-  #   else
-  #     redirect_to line_items_path, alert: @line_item.errors.full_messages
-  #   end
-  # end
+  def payment_params
+    params.require(:payment).permit(:person_id, :amount).merge(paid_on: DateTime.now)
+  end
 end
